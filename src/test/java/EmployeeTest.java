@@ -39,8 +39,8 @@ class EmployeeTest {
         boolean actual1 = employeeUtils.hasBeenEmployedLongerThanFiveYears(employee1);
         boolean actual2 = employeeUtils.hasBeenEmployedLongerThanFiveYears(employee2);
 
-        assertEquals(actual1, true);
-        assertEquals(actual2, false);
+        assertTrue(actual1);
+        assertFalse(actual2);
     }
 
     @Test
@@ -53,8 +53,19 @@ class EmployeeTest {
         boolean actual1 = employeeUtils.hasMoreThanThreeDirectReports(employee1);
         boolean actual2 = employeeUtils.hasMoreThanThreeDirectReports(employee2);
 
-        assertEquals(actual1, true);
-        assertEquals(actual2, false);
+        assertTrue(actual1);
+        assertFalse(actual2);
+    }
+
+    @Test
+    void employeeHasMoreThanThreeYearsOfServiceAndLessThanTwoDirectReports() {
+        Employee employee = new Employee();
+        employee.setYearsOfService(5);
+        employee.setNumberOfDirectReports(1);
+
+        boolean actual = employeeUtils.hasMoreThanThreeYearsOfServiceAndLessThanTwoDirectReports(employee);
+
+        assertTrue(actual);
     }
 
 }

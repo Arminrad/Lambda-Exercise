@@ -22,4 +22,9 @@ public class EmployeeUtils {
         Predicate<Employee> moreThanThreeDirectReports = (Employee e) -> e.getNumberOfDirectReports() > 3;
         return moreThanThreeDirectReports.test(employee);
     }
+
+    public boolean hasMoreThanThreeYearsOfServiceAndLessThanTwoDirectReports(Employee employee) {
+        Predicate<Employee> moreThanThreeYearsOfServiceAndLessThanTwoDirectReports = (Employee e) -> e.getYearsOfService() > 3 && e.getNumberOfDirectReports() < 2;
+        return moreThanThreeYearsOfServiceAndLessThanTwoDirectReports.test(employee);
+    }
 }
